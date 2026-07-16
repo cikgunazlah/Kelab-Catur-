@@ -1,4 +1,4 @@
-alert("Script Berjalan!");
+
 function updateClock(){
 
     const greeting = document.getElementById("greeting");
@@ -6,7 +6,7 @@ function updateClock(){
     const date = document.getElementById("date");
 
     if (!greeting || !clock || !date) {
-        alert("Ada ID yang tidak dijumpai.");
+
         return;
     }
 
