@@ -7,7 +7,7 @@ function updateClock(){
 
     if (!greeting || !clock || !date) {
 
-        return;
+     return;
     }
 
     const now = new Date();
