@@ -19,6 +19,16 @@
 <script src="script.js"></script>
 
 <body>
+<div class="floating-chess">
+
+    <span>♔</span>
+    <span>♕</span>
+    <span>♖</span>
+    <span>♗</span>
+    <span>♘</span>
+    <span>♙</span>
+
+</div>
 
 <header>
   <img src="images/logo-sekolah.png" class="logoSekolah" alt="Logo Sekolah">
@@ -38,7 +48,35 @@
 
 
 <p>Portal Rasmi Kelab Catur</p>  
+<div id="countdownBox">
 
+<h3>⏳ Countdown Kejohanan</h3>
+
+<div class="count-grid">
+
+    <div class="count-card">
+        <span id="days">0</span>
+        <small>Hari</small>
+    </div>
+
+    <div class="count-card">
+        <span id="hours">0</span>
+        <small>Jam</small>
+    </div>
+
+    <div class="count-card">
+        <span id="minutes">0</span>
+        <small>Minit</small>
+    </div>
+
+    <div class="count-card">
+        <span id="seconds">0</span>
+        <small>Saat</small>
+    </div>
+
+</div>
+
+</div>
 
 </header>
 <nav class="menu">
@@ -98,7 +136,7 @@
     <h3>🏆 Aktiviti Program</h3>
     <p>Maklumat aktiviti dan galeri.</p>
 
-    <a href="#">
+    <a href="#galeri">
        Lihat Aktiviti
     </a>
 </section>
@@ -157,14 +195,14 @@ Kejohanan Catur MSS Selangor
 
         <img src="images/poster2026.jpg"
              alt="Poster Pertandingan"
-             class="poster-kejohanan"> 
+             class="poster-kejohanan fade-in"> 
 
           <div class="daftar-box">
 
 <h3>📝 Daftar Penyertaan</h3>
 
 <p>
-Imbas QR Code atau klik butang di bawah untuk mendaftar.
+Imbas QR Code pada poster di atas atau klik butang di bawah untuk mendaftar.
 </p>
 
 
@@ -358,6 +396,58 @@ class="takwim-img">
 </div>
 
 </section>
+<!-- ================= TEAM LICHESS ================= -->
+<section class="lichess-section">
+
+    <h2>♟️ Sertai Komuniti Catur Kami</h2>
+
+    <p>
+        Sertai Team Lichess rasmi Kelab Catur SMK Bandar Tasik Puteri dan
+        ikuti kejohanan catur secara dalam talian.
+    </p>
+
+    <div class="lichess-container">
+
+        <div class="lichess-card">
+
+            <h3>♟️ Team Lichess</h3>
+
+            <p>
+                Sertai komuniti rasmi Kelab Catur SMK Bandar Tasik Puteri.
+            </p>
+
+            <a href="https://lichess.org/team/kelab-catur-smk-bandar-tasik-puteri"
+               target="_blank"
+               class="lichess-btn">
+
+               🟢 Sertai Team
+
+            </a>
+
+        </div>
+
+        <div class="lichess-card">
+
+            <h3>🏆 Kejohanan Online</h3>
+
+            <p>
+                Sertai kejohanan rasmi kelab dan cabar pemain lain.
+            </p>
+
+            <a href="#"
+               class="lichess-btn tournament-btn">
+
+               🏆 Masuk Kejohanan
+
+            </a>
+
+        </div>
+
+    </div>
+<p class="lichess-note">
+💡 Klik salah satu butang di atas untuk menyertai Team Lichess atau kejohanan catur dalam talian.
+</p>
+</section>
 
 
 </footer>
@@ -388,7 +478,13 @@ Portal Version 1.0
 </p>
 
 </section>
-
+<audio id="bgMusic" autoplay loop>
+    <source src="music/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+</audio>
+<button id="musicBtn" onclick="toggleMusic()">
+    🔊
+</button>
+<script src="script.js"></script>
 </body>
 </html>
 

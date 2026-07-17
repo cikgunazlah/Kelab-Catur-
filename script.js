@@ -6,8 +6,8 @@ function updateClock(){
     const date = document.getElementById("date");
 
     if (!greeting || !clock || !date) {
-
-     return;
+        
+        return;
     }
 
     const now = new Date();
@@ -31,3 +31,43 @@ function updateClock(){
 
 updateClock();
 setInterval(updateClock,1000);
+
+// ================= COUNTDOWN KEJOHANAN =================
+
+const eventDate = new Date("August 29, 2026 09:00:00").getTime();
+
+setInterval(function () {
+
+    const now = new Date().getTime();
+
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+document.getElementById("hours").textContent = hours;
+document.getElementById("minutes").textContent = minutes;
+document.getElementById("seconds").textContent = seconds;
+
+}, 1000);
+
+function toggleMusic(){
+
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicBtn");
+
+    if(music.paused){
+        music.play();
+        btn.innerHTML = "🔊";
+    }else{
+        music.pause();
+        btn.innerHTML = "🔇";
+    }
+
+}

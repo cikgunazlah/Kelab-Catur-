@@ -70,9 +70,10 @@ width:120px;
 h1{
 
     font-size:48px;
-
     color:#FFD700;
-
+text-shadow: 0 0 10px #FFD700,
+             0 0 20px #FFD700;
+animation: glow 2s ease-in-out infinite alternate;
     margin-bottom:10px;
 
 }
@@ -866,4 +867,358 @@ footer strong{
 .btn-daftar:hover{
     background:#ffbf00;
     transform:scale(1.05);
+}
+/* ===== Animasi Fade In ===== */
+
+.fade-in{
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===== Butang Berdenyut ===== */
+
+.daftar-btn{
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+@keyframes glow{
+    from{
+        text-shadow: 0 0 10px #FFD700,
+                     0 0 20px #FFD700;
+    }
+
+    to{
+        text-shadow: 0 0 20px #FFD700,
+                     0 0 40px #FFD700,
+                     0 0 60px #FFD700;
+    }
+}
+
+* ================= FLOATING CHESS ================= */
+
+.floating-chess{
+     position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:9999;
+    border:3px solid red;
+}
+
+.floating-chess span{
+    position:absolute;
+    color:red;
+    font-size:80px;
+    opacity:1;
+    animation:floatChess 8s linear infinite;
+}
+
+.floating-chess span:nth-child(1){
+    left:8%;
+    animation-duration:20s;
+}
+
+.floating-chess span:nth-child(2){
+    left:25%;
+    font-size:55px;
+    animation-duration:24s;
+}
+
+.floating-chess span:nth-child(3){
+    left:45%;
+    font-size:45px;
+    animation-duration:18s;
+}
+
+.floating-chess span:nth-child(4){
+    left:65%;
+    font-size:60px;
+    animation-duration:22s;
+}
+
+.floating-chess span:nth-child(5){
+    left:82%;
+    font-size:38px;
+    animation-duration:19s;
+}
+
+.floating-chess span:nth-child(6){
+    left:92%;
+    font-size:50px;
+    animation-duration:25s;
+}
+
+@keyframes floatChess{
+
+    0%{
+        transform:translateY(110vh) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:0.25;
+    }
+
+    85%{
+        opacity:0.25;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+* ===== Countdown Kejohanan ===== */
+
+#countdownBox{
+    margin-top:20px;
+    padding:15px;
+    background:rgba(255,215,0,0.12);
+    border:2px solid gold;
+    border-radius:15px;
+    display:inline-block;
+    color:#FFD700;
+    box-shadow:0 0 15px rgba(255,215,0,0.4);
+    animation:pulseCountdown 2s infinite;
+}
+
+#countdown{
+    display:block;
+    margin-top:8px;
+    font-size:22px;
+    font-weight:bold;
+    color:white;
+}
+
+@keyframes pulseCountdown{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* ========= COUNTDOWN PREMIUM ========= */
+
+.count-grid{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.count-card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px);
+    border:2px solid #FFD700;
+    border-radius:18px;
+    width:95px;
+    padding:16px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.count-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px gold;
+}
+
+.count-card span{
+    display:block;
+    font-size:30px;
+    font-weight:bold;
+    color:#FFD700;
+}
+
+.count-card small{
+    color:white;
+    font-size:14px;
+}
+
+#countdownBox h3{
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+        musicBtn.innerHTML="🔊 Music ON";
+    }else{
+        music.pause();
+        musicBtn.innerHTML="🔇 Music OFF";
+    }
+
+}
+
+#musicBtn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:gold;
+    color:#000;
+    font-size:28px;
+    cursor:pointer;
+    box-shadow:0 0 15px gold;
+    z-index:9999;
+    transition:0.3s;
+}
+
+#musicBtn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px gold;
+}
+
+/* ===============================
+   TEAM LICHESS
+================================= */
+
+.lichess-section{
+    max-width:1100px;
+    margin:60px auto;
+    padding:20px;
+    text-align:center;
+}
+
+.lichess-section h2{
+    color:#f4c542;
+    font-size:38px;
+    margin-bottom:15px;
+    text-shadow:0 0 12px rgba(244,197,66,.6);
+}
+
+.lichess-section>p{
+    color:#ffffff;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+.lichess-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.lichess-card{
+    background:#1e1e2f;
+    width:340px;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    border:1px solid rgba(244,197,66,.15);
+    transition:.3s;
+}
+
+.lichess-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 35px rgba(244,197,66,.35);
+}
+
+.lichess-card h3{
+    color:#f4c542;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.lichess-card p{
+    color:#dddddd;
+    line-height:1.6;
+    min-height:60px;
+}
+
+.lichess-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.lichess-btn:hover{
+    background:#1e7e34;
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 0 20px rgba(255,255,255,.35);
+}
+
+.tournament-btn{
+    background:#f39c12;
+}
+
+.tournament-btn:hover{
+    background:#d68910;
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 0 20px rgba(255,255,255,.35);
+}
+
+@media(max-width:768px){
+
+.lichess-card{
+    width:100%;
+}
+
+}
+
+.lichess-note{
+    margin-top:30px;
+    color:#cccccc;
+    font-size:16px;
+    font-style:italic;
 }
